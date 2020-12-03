@@ -12,24 +12,24 @@ import androidx.fragment.app.Fragment;
 
 //TODO : fix this fragment so it works :)
 //Once it's done, then create a second fragment with the other layout
-public class FragmentOne extends Fragment {
+public class FragmentTwo extends Fragment {
 
     private View view;
+    public static final String TAB_NAME = "REMOVE TO COUNTER";
     private Counter counter;
-    public static final String TAB_NAME = "ADD TO COUNTER";
 
-    public FragmentOne() {
+    public FragmentTwo() {
 
     }
 
-    public static FragmentOne newInstance() {
-        return new FragmentOne();
+    public static FragmentTwo newInstance() {
+        return new FragmentTwo();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_one, container, false);
+        view = inflater.inflate(R.layout.fragment_two, container, false);
         return view;
     }
 
@@ -45,11 +45,11 @@ public class FragmentOne extends Fragment {
     }
 
     public void setupButton() {
-        Button button = view.findViewById(R.id.button_increment);
+        Button button = view.findViewById(R.id.button_decrement);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(counter != null) counter.increment();
+                if(counter != null) counter.decrement();
             }
         });
     }
